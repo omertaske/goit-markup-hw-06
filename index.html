@@ -2,12 +2,48 @@
 <html lang="en">
     <head>
         <title>WebStudio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/modern-normalize.min.css">
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-       
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+         const popup = document.querySelector(".popup");
+         const openPopupBtn = document.querySelector(".blue_button");
+         const closePopupBtn = document.querySelector(".popup-btn-close");
+     
+         popup.style.display = "none";
+         openPopupBtn.addEventListener("click", function () {
+             popup.style.display = "block";
+         });
+         closePopupBtn.addEventListener("click", function () {
+             popup.style.display = "none";
+         });
+         window.addEventListener("click", function (event) {
+             if (event.target === popup) {
+                 popup.style.display = "none";
+             }
+         });
+     });
+     
+     
+         document.addEventListener("DOMContentLoaded", function () {
+             const mobileMenu = document.querySelector(".mobile-menu-container");
+             const openMobileBtn = document.querySelector(".mobile-btn-open");
+             const closeMobileBtn = document.querySelector(".mobile-btn-close");
+             
+             mobileMenu.style.display = "none";
+             openMobileBtn.addEventListener("click", function () {
+                 mobileMenu.style.display = "flex";
+             });
+             closeMobileBtn.addEventListener("click", function () {
+                 mobileMenu.style.display = "none";
+             });
+         });
+         </script>
        
     </head>
     <body>
@@ -42,10 +78,76 @@
 
                     </li>
                 </ul>
+                <br>
             </address>
+            <button type="button" class="mobile-btn-open">
+                <svg class="mobile-svg-close" width="24" height="24">
+                    <use href="./images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+
+
 
            
         </div>
+
+        <div class="mobile-menu-container">
+            <div class="mobile-button">
+                <button type="button" class="mobile-btn-close">
+                    <svg class="mobile-svg-close" width="8" height="8">
+                        <use href="./images/icons.svg#icon-close"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-menu">
+                <ul class="mobile-menu-list">
+                    <li class="mobile-menu-list-item"><a href="">Studio</a></li>
+                    <li class="mobile-menu-list-item"><a href="">Portfolio</a></li>
+                    <li class="mobile-menu-list-item"><a href="">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="mobile-address">
+                <ul class="mobile-contact">
+                    <li>
+                        <a href="mailto:info@devstudio.com" class="mobile-contact-list-link">info@devstudio.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:+110001111111" class="mobile-contact-list-link">+11 (000) 111-11-11</a>
+                    </li>
+                </ul>
+                <ul class="mobile-social-list">
+                    <li class="mobile-social-list-item">
+                        <a href="#" class="mobile-social-link">
+                            <svg width="16" height="16" class="social-svg">
+                                <use href="./images/icons.svg#icon-instagram-2"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="mobile-social-list-item">
+                        <a href="#" class="mobile-social-link">
+                        <svg width="16" height="16" class="social-svg">
+                            <use href="./images/icons.svg#icon-twitter-1"></use>
+                        </svg>
+                    </a>
+                    </li>
+                    <li class="mobile-social-list-item">
+                        <a href="#" class="mobile-social-link">
+                            <svg width="16" height="16" class="social-svg">
+                                <use href="./images/icons.svg#icon-Vector"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="mobile-social-list-item">
+                        <a href="#" class="mobile-social-link">
+                            <svg width="16" height="16" class="social-svg">
+                                <use href="./images/icons.svg#icon-linkedin-1"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </div>
 
         </header>
 <main>
